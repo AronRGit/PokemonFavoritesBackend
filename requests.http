@@ -1,0 +1,54 @@
+###
+
+POST http://localhost:3000/api/usuarios HTTP/1.1
+Content-Type: application/json
+
+{
+    
+"nombre": "pepe",
+"correo": "pepe12@gmail.com",
+ "usuario": "pepepokemon",
+ "contraseña": "pepetrainer",
+"favoritos": []
+}
+
+###
+GET http://localhost:3000/api/usuarios HTTP/1.1
+
+###
+GET http://localhost:3000/api/usuarios/63aa435cc3531ac086224dfb HTTP/1.1
+
+###
+PUT http://localhost:3000/api/usuarios/63aa435cc3531ac086224dfb HTTP/1.1
+Content-Type: application/json
+
+{
+    
+"nombre": "aron",
+"correo": "aron16d@gmail.com",
+ "usuario": "aronpokemon",
+ "contraseña": "pokemonfav",
+"favoritos": ["pikachu","snorlax","charmander"]
+}
+
+###
+
+DELETE http://localhost:3000/api/usuarios/63a5b789771731d20fdec6f8 HTTP/1.1
+
+###
+//GET ALL FAVORITES FOR A USER
+GET http://localhost:3000/api/usuarios/63aa435cc3531ac086224dfb/favoritos HTTP/1.1
+
+###
+// DELETE A FAVORITE FROM A USER'S FAVORITES
+DELETE http://localhost:3000/api/usuarios/63aa435cc3531ac086224dfb/favoritos/pikachu HTTP/1.1
+
+
+###
+// VERIFICAR SI EXISTE EL USUARIO Y CONTRASEÑA EN LA BASE DE DATOS
+GET http://localhost:3000/api/usuarios/verify/johndoe/123456  HTTP/1.1
+
+
+###
+//AGREGAR UN POKEMON A LA LISTA DE FAVORITOS DE UN USUARIO
+POST  http://localhost:3000/api/usuarios/63aa435cc3531ac086224dfb/favoritos/gengar  HTTP/1.1
